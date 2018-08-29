@@ -50,10 +50,10 @@ or [Insomnia](https://insomnia.rest/) to test requests and get responses from PP
 
  ## Endpoints
 
- ### public-user-login
- `development status: complete`
+### public-user-login
+`development status: complete`
 
- Logs in a user.
+Logs in a user.
 
 Required json key value pairs:
 ```
@@ -68,7 +68,7 @@ data: userEmail
 ```
 
 ### public-user-logout
- `development status: complete`
+`development status: complete`
 
 Logs out a user.
 
