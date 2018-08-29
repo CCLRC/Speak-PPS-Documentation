@@ -105,3 +105,36 @@ Returns on success:
 ```
 message: "User created and logged in"
 ```
+
+### get-public-application-form
+`development status: under development`
+
+Get Application form for user to apply.
+
+Required json key value pairs:
+```
+userToken
+ppn <ppn for the parcel the user is applying for>
+```
+
+Returns on success:
+```
+message: "Application Form"
+data: <TBD>
+```
+
+### get-public-application-list
+`development status: undre development`
+
+Get list of applications for user
+
+Required json key value pairs:
+```
+userToken
+```
+
+Returns on success
+```
+message: "Applications"
+data: <TBD>
+```
