@@ -1,6 +1,6 @@
 # Plugin Documentation
 
-Speak PPS is a wordpress plugin designed to save the API key, Organization Name, in the wp-options table.
+Speak PPS is a WordPress plugin designed to save the API key, Organization Name, in the wp-options table.
 The plugin also sets a cookie for every user the visits the Wordpress site.
 The cookie is unique to every user.
 
