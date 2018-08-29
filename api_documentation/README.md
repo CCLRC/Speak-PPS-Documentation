@@ -45,6 +45,8 @@ The `json` parameter should also include a key `userToken` of the value which is
   -F orgname=TestOrg \
   -F signature=4feec9a388bef3fd436be
  ```
+You can use [Postman](https://www.getpostman.com/)
+or [Insomnia](https://insomnia.rest/) to test requests and get responses from PPS.
 
  ## Endpoints
 
