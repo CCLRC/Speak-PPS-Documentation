@@ -121,6 +121,7 @@ Required json key value pairs
 username
 orgname
 epoch
+verification_signature
 ```
 All these key value pairs are part of the
 argument list in the url which the user clicks on
@@ -162,6 +163,7 @@ username
 orgname
 epoch
 userPassword
+verification_signature
 ```
 All these key value pairs, except for `userPassword`,
 are part of the argument list in the url
