@@ -93,6 +93,7 @@ Required json key value pairs:
 userToken
 userEmail
 userPassword
+validation_url
 first_name
 last_name
 number
@@ -102,10 +103,85 @@ state
 zip
 ```
 
+After the user is created, an email is sent out to the user to verify their
+email address. The email verification is handled by `verify-public-user`.
+
 Returns on success:
 ```
-message: "User created and logged in"
+message: "User created"
 data: userEmail
+```
+### verify-public-user
+`development status: complete`
+
+Verifies the user email address.
+
+Required json key value pairs
+```
+username
+orgname
+epoch
+```
+All these key value pairs are part of the
+argument list in the url which the user clicks on
+to verify themselves.
+
+Returns on success:
+```
+message: "User verified"
+data: True
+```
+
+### public-user-password-reset
+`development status: complete`
+
+Initiate password reset
+
+Required json key value pairs
+```
+userEmail
+password_reset_url
+```
+If the user email exists, PPS will send out an
+email to the user with the reset link.
+
+Returns on success:
+```
+message: ""
+data: True
+```
+
+### finish-public-user-password-reset
+`development status: complete`
+
+Resets password
+
+Required json key value pairs
+```
+username
+orgname
+epoch
+userPassword
+```
+All these key value pairs, except for `userPassword`,
+are part of the argument list in the url
+which the user clicks on to verify themselves.
+
+Returns on success:
+```
+message: "user password reset done"
+data: True
+```
+
+### create-public-application
+`development status: under development`
+
+Create application for user.
+
+Required json key value pairs:
+
+```
+userToken
 ```
 
 ### get-public-application-form
