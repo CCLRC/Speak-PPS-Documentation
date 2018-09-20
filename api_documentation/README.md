@@ -174,15 +174,28 @@ data: True
 ```
 
 ### create-public-application
-`development status: under development`
+`development status: complete`
 
 Create application for user.
 
 Required json key value pairs:
-
 ```
 userToken
+app_parcel
+disp_app_type
 ```
+Definitions for `app_parcel` and `disp_app_type` are provided
+in the documentation sent via email. Other key value pairs
+can be added to this request to record application data,
+but the above keys are required.
+
+Returns on success:
+```
+message: "Application created"
+data: {"application_id": <id of the application>}
+```
+You can provide the application id to the user for
+future tracking.
 
 ### get-public-application-form
 `development status: under development`
