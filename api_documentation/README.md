@@ -199,25 +199,46 @@ data: {"application_id": <id of the application>}
 You can provide the application id to the user for
 future tracking.
 
-### get-public-application-form
-`development status: under development`
+### public-application-upload
+`development stats: complete`
 
-Get Application form for user to apply.
+Upload files to application.
 
 Required json key value pairs:
 ```
 userToken
-ppn <ppn for the parcel the user is applying for>
+application_id (id of the application to which the file is attached)
+public_application_upload_type
+   - this can be one of:
+     - Costs Table
+     - Sources and Uses of Funds Table
+     - Proof of Funds
+     - Files proving Experience
+     - Other
+```
+
+You will also send a file object with the key `files[]` in the request. Note that this is separate from the json key and doesnt have to be signed. Here is a cURL example of the request:
+
+```bash
+curl -X POST \
+  http://localhost:5000/public-api/v1/public-application-upload \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/x-www-form-urlencoded' \
+  -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
+  -F 'json={"userToken": "12345", "application_id": "67890", "public_application_upload_type": "Proof of Funds"}' \
+  -F orgname=HCLRC \
+  -F signature=sigsigsig \
+  -F 'files[]=@/Users/anurag/Downloads/112-0005-0090-00.jpg'
 ```
 
 Returns on success:
 ```
-message: "Application Form"
-data: <TBD>
+message: "File uploaded"
+data: True
 ```
 
 ### get-public-application-list
-`development status: under development`
+`development status: complete`
 
 Get list of applications for user
 
@@ -226,8 +247,40 @@ Required json key value pairs:
 userToken
 ```
 
-Returns on success
+Returns on success:
 ```
 message: "Applications"
-data: <TBD>
+data: <dictionary of applications with relevant data>
+```
+
+### submit-public-application
+`development status: complete`
+
+Set the status of application as `received`.
+
+Required json key value parameters:
+```
+userToken
+application_id
+```
+
+Returns on success:
+```
+message: "Application Submitted"
+data: True
+```
+
+### get-public-user-profile
+`development status: complete`
+
+Get the details of user.
+
+Required json key value parameters:
+```
+userToken
+```
+Returns on success:
+```
+message: "User profile"
+data: <dictonary of user profile values>
 ```
