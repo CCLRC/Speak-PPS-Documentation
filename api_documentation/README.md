@@ -284,3 +284,32 @@ Returns on success:
 message: "User profile"
 data: <dictonary of user profile values>
 ```
+
+### update-public-application
+`development status: under development`
+
+Update application for user.
+
+Required json key value pairs:
+```
+userToken
+application_id
+app_parcel
+disp_app_type
+```
+Definitions for `app_parcel` and `disp_app_type` are provided
+in the documentation sent via email. Other key value pairs
+can be added to this request to record application data,
+but the above keys are required.
+
+Note that `application_id`, `app_parcel`, and `disp_app_type`
+should match the existing application record. This also means
+that you cannot change the `application_id`, `app_parcel`,
+or `disp_app_type` values of an existing application. A request to
+change these values will result in a `mismatch error`.
+
+Returns on success:
+```
+message: "Application updated"
+data: {"application_id": <id of the application>}
+```
