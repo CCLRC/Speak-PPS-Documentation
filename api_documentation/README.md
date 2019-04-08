@@ -102,6 +102,10 @@ street
 state
 zip
 ```
+Optional json key value pair:
+```
+organization
+```
 
 After the user is created, an email is sent out to the user to verify their
 email address. The email verification is handled by `verify-public-user`.
@@ -174,6 +178,25 @@ Returns on success:
 message: "user password reset done"
 data: True
 ```
+
+### update-public-user-profile
+`development status: complete`
+
+Update the user profile including password.
+
+Required json key value pairs
+```
+userToken
+```
+All other key value pairs that are to be updated are similar to
+the create-public-user endpoint.
+
+Returns on success:
+```
+message: "User info updated"
+data: "OK"
+```
+
 
 ### create-public-application
 `development status: complete`
