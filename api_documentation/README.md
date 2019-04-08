@@ -189,7 +189,7 @@ Required json key value pairs
 userToken
 ```
 All other key value pairs that are to be updated are similar to
-the create-public-user endpoint.
+the [create-public-user endpoint](https://github.com/CCLRC/Speak-PPS-Documentation/tree/master/api_documentation#create-public-user).
 
 Returns on success:
 ```
